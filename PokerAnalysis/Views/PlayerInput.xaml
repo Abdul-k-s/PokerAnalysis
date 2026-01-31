@@ -1,0 +1,253 @@
+﻿<UserControl x:Class="PokerAnalysis.Views.PlayerInput"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PokerAnalysis.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="600" Height="500"
+             >
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        
+        <StackPanel >
+            
+            <TextBox/>
+            <Grid Grid.Column="0" VerticalAlignment="Top" >
+                <!--Bind CardCollectionView to the Deck-->
+                <local:TodoItemListingView Height="455"
+                    x:Name="DeckX"
+                    DataContext="{Binding Deck}"
+                    CardDropCommand="{Binding CardReceivedCommand}"
+                    IncomingTodoItem="{Binding IncomingTodoItemViewModel}"
+                    TodoItemRemovedCommand="{Binding TodoItemRemovedCommand}"
+                    RemovedTodoItem="{Binding RemovedTodoItemViewModel}"
+                    />
+
+
+            </Grid>
+            
+        </StackPanel>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="300"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" BorderBrush="AliceBlue" CornerRadius="10" BorderThickness="2" Margin="5 0 5 0" Height="240" VerticalAlignment="Top">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="110"/>
+                        <RowDefinition Height="120"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" >
+                        <StackPanel Orientation="Vertical"  HorizontalAlignment="Left" >
+                            <TextBlock Text="River" HorizontalAlignment="Center" FontSize="16" Foreground="AliceBlue"/>
+                            <Border Height="80" Width="125"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Opacity="1">
+
+                                <!--Bind CardCollectionView to the River for PlayerInput-->
+                                <local:TodoItemListingView 
+                                    DataContext="{Binding River}"
+                                    CardDropCommand="{Binding RiverReceivedCommand}"
+                                    IncomingTodoItem="{Binding IncomingTodoItemViewModel}"
+                                    TodoItemRemovedCommand="{Binding TodoItemRemovedCommand}"
+                                    RemovedTodoItem="{Binding RemovedTodoItemViewModel}"/>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" >
+
+                            <TextBlock Text="P 1" HorizontalAlignment="Center" FontSize="16" Foreground="AliceBlue"/>
+                            <Border Height="80" Width="52"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+                                <!--Bind CardCollectionView to the Players for PlayerInput-->
+                                <local:TodoItemListingView 
+                    DataContext="{Binding Player1}"
+                    CardDropCommand="{Binding PlayerReceivedCommand}"
+                    IncomingTodoItem="{Binding IncomingTodoItemViewModel}"
+                    TodoItemRemovedCommand="{Binding TodoItemRemovedCommand}"
+                    RemovedTodoItem="{Binding RemovedTodoItemViewModel}"/>
+                            </Border>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Vertical" Grid.Row="2">
+                            <TextBlock Text="P 2" HorizontalAlignment="Center" FontSize="16" Foreground="AliceBlue"/>
+                            <Border Height="80" Width="52"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <local:TodoItemListingView 
+                    DataContext="{Binding Player2}"
+                    CardDropCommand="{Binding PlayerReceivedCommand}"
+                    IncomingTodoItem="{Binding IncomingTodoItemViewModel}"
+                    TodoItemRemovedCommand="{Binding TodoItemRemovedCommand}"
+                    RemovedTodoItem="{Binding RemovedTodoItemViewModel}"/>
+                            </Border>
+                        </StackPanel>
+
+
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="P 3" Foreground="AliceBlue" HorizontalAlignment="Center" FontSize="16"/>
+                            <Border Height="80" Width="52"   HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <local:TodoItemListingView 
+                    DataContext="{Binding Player3}"
+                    CardDropCommand="{Binding PlayerReceivedCommand}"
+                    IncomingTodoItem="{Binding IncomingTodoItemViewModel}"
+                    TodoItemRemovedCommand="{Binding TodoItemRemovedCommand}"
+                    RemovedTodoItem="{Binding RemovedTodoItemViewModel}"/>
+                            </Border>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="P 4" Foreground="AliceBlue" HorizontalAlignment="Center" FontSize="16"/>
+                            <Border Height="80" Width="52"   HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <local:TodoItemListingView 
+                    DataContext="{Binding Player4}"
+                    CardDropCommand="{Binding PlayerReceivedCommand}"
+                    IncomingTodoItem="{Binding IncomingTodoItemViewModel}"
+                    TodoItemRemovedCommand="{Binding TodoItemRemovedCommand}"
+                    RemovedTodoItem="{Binding RemovedTodoItemViewModel}"/>
+                            </Border>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="P 5" Foreground="AliceBlue" HorizontalAlignment="Center" FontSize="16"/>
+                            <Border Height="80" Width="52"   HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <local:TodoItemListingView 
+                    DataContext="{Binding Player5}"
+                    CardDropCommand="{Binding PlayerReceivedCommand}"
+                    IncomingTodoItem="{Binding IncomingTodoItemViewModel}"
+                    TodoItemRemovedCommand="{Binding TodoItemRemovedCommand}"
+                    RemovedTodoItem="{Binding RemovedTodoItemViewModel}"/>
+                            </Border>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="P 6" Foreground="AliceBlue" HorizontalAlignment="Center" FontSize="16"/>
+                            <Border Height="80" Width="52"   HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <local:TodoItemListingView 
+                    DataContext="{Binding Player6}"
+                    CardDropCommand="{Binding PlayerReceivedCommand}"
+                    IncomingTodoItem="{Binding IncomingTodoItemViewModel}"
+                    TodoItemRemovedCommand="{Binding TodoItemRemovedCommand}"
+                    RemovedTodoItem="{Binding RemovedTodoItemViewModel}"/>
+                            </Border>
+                        </StackPanel>
+                    </StackPanel>
+                    
+                    <Grid Grid.Row="1" VerticalAlignment="Top" Margin="10 0 0 0" HorizontalAlignment="Left">
+                        
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+
+                        </Grid.RowDefinitions>
+                        <TextBlock  Foreground="AliceBlue" x:Name="RunTime"  DockPanel.Dock="Bottom" Grid.Row="2"/>
+
+                        <Grid Width="445" Margin="0 0 0 0" Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="350"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <GroupBox Header="Number Of Players" Padding="10 2 2 2" Foreground="AliceBlue" 
+                                       Width="250" Grid.Column="0" HorizontalAlignment="Left">
+                                <DockPanel Width="250">
+                                    <TextBox x:Name="TextPlayerNo" 
+                                        Text="{Binding NumPlayers, UpdateSourceTrigger=PropertyChanged}" 
+                                        Margin="0" Width="60" DockPanel.Dock="Left" Background="WhiteSmoke" BorderThickness="0,0,0,0"/>
+
+                                    <Slider IsSnapToTickEnabled="True"  ValueChanged="Players_ValueChanged" Maximum="6" 
+                                        Minimum="1" Value="{Binding ElementName=TextPlayerNo,Path=Text}" 
+                                              Width="80" DockPanel.Dock="Right" TickFrequency="1" TickPlacement="BottomRight"/>
+                                    
+                                </DockPanel>
+                            </GroupBox>
+
+                            <Button Content="Submit" Command="{Binding SubmitCommand}"  DockPanel.Dock="Right" HorizontalAlignment="Right"  Width="100"
+                            Background="#DA34AE" Style="{StaticResource btn}" Template="{StaticResource btnTemplate2}" Grid.Column="1"/>
+
+                        </Grid>
+                        
+                        <Grid Width="445" Margin="0 0 0 0" Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="350"/>
+                                <ColumnDefinition Width="auto"/>
+
+                            </Grid.ColumnDefinitions>
+
+
+                            <GroupBox Header="Number Of Loops" Padding="10 2 2 2" Foreground="AliceBlue" Grid.Column="0"
+                                       HorizontalAlignment="Left" Width="250">
+                                <DockPanel  Width="250" >
+                                    <!--<TextBlock  Foreground="AliceBlue" x:Name="RunTime"  DockPanel.Dock="Bottom" Grid.Column="1"/>-->
+
+                                    <TextBox x:Name="LoopNo" Width="60" 
+                                        Text="{Binding NumLoops, UpdateSourceTrigger=PropertyChanged}" 
+                                         DockPanel.Dock="Left"/>
+
+                                    <Slider IsSnapToTickEnabled="True" Width="80" ValueChanged="Loops_ValueChanged" TickPlacement="BottomRight" Minimum="1" Maximum="100000"
+                                        TickFrequency="10000" Value="{Binding ElementName=LoopNo,Path=Text}" DockPanel.Dock="Right"/>
+
+                                </DockPanel>
+                            </GroupBox>
+
+                            <Button Content="Clear"  Command="{Binding ClearCommand}" Grid.Column="2"  HorizontalAlignment="Right"  Width="100"
+                            Style="{StaticResource btn}" Template="{StaticResource btnTemplate2}" Background="#28Aeed" DockPanel.Dock="Right"/>
+
+                        </Grid>
+                        
+
+                    </Grid>
+
+
+                </Grid>
+
+            </Border>
+            
+            <Border  Grid.Row="1" BorderBrush="AliceBlue" CornerRadius="10" BorderThickness="2" Margin="5 1 5 0" Height="225" VerticalAlignment="Top">
+                <Grid Grid.Row="1" VerticalAlignment="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListView ItemsSource="{Binding PlayerStr}" Grid.Row="0" Grid.Column="0" 
+                              Margin="0 0 0 5" Background="Transparent" Foreground="AliceBlue" Height="215" 
+                              Width="210" BorderBrush="AliceBlue">
+
+                        <ListView.View >
+                            <GridView  >
+
+                                <GridViewColumn Header="Player" DisplayMemberBinding="{Binding Label}" Width="70" />
+                                <GridViewColumn Header="Wins" DisplayMemberBinding="{Binding Win}" Width="70"/>
+                                <GridViewColumn Header="Win%" DisplayMemberBinding="{Binding WinsPercentage}" Width="60"/>
+
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+
+                    <ListView ItemsSource="{Binding HandStr}"
+                              Grid.Row="1" Grid.Column="1" Margin="2 0 0 5" 
+                              Height="215" Background="Transparent" Foreground="AliceBlue" BorderBrush="AliceBlue" Width="210">
+
+
+                        <ListView.View>
+                            <GridView >
+
+                                <GridViewColumn Header="HandType" DisplayMemberBinding="{Binding Item1}" Width="80"/>
+                                <GridViewColumn Header="Count" DisplayMemberBinding="{Binding Item2}" Width="50"/>
+                                <GridViewColumn Header="Percentage" DisplayMemberBinding="{Binding Item3}" Width="70"/>
+
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+
+                </Grid>
+
+            </Border>
+
+        </Grid>
+
+    </Grid>
+</UserControl>
